@@ -1,0 +1,289 @@
+// General styles
+.max-width {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.padding-x {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  @media (min-width: 640px) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+.padding-y {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Hero styles
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @media (min-width: 1280px) {
+    flex-direction: row;
+  }
+}
+
+.hero__title {
+  font-size: 50px;
+  font-weight: 800;
+
+  @media (min-width: 640px) {
+    font-size: 64px;
+  }
+
+  @media (min-width: 1536px) {
+    font-size: 72px;
+  }
+}
+
+.hero__subtitle {
+  font-size: 27px;
+  color: #2b2c35;
+  font-weight: 300;
+  margin-top: 1.25rem;
+}
+
+.hero__image-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+
+  @media (min-width: 1280px) {
+    flex: 1.5;
+    height: 100vh;
+  }
+}
+
+.hero__image {
+  position: relative;
+  width: 90%;
+  height: 590px;
+  z-index: 0;
+
+  @media (min-width: 1280px) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.hero__image-overlay {
+  position: absolute;
+  right: -25%;
+  background-image: url("/hero-bg.png");
+  background-repeat: round;
+  z-index: -10;
+  width: 100%;
+  height: 590px;
+  overflow: hidden;
+
+  @media (min-width: 1280px) {
+    top: -6rem;
+    right: -50%;
+    height: 100vh;
+  }
+}
+
+// Home styles
+.home__text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.625rem;
+  color: #2b2c35;
+}
+
+.home__filters {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.home__cars-wrapper {
+  display: grid;
+  width: full;
+  gap: 2rem;
+  padding-top: 3.5rem;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1536px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Car Card styles
+.car-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  color: #2b2c35;
+  background-color: #f5f8ff;
+  border-radius: 1.5rem;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.car-card__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.car-card__content-title {
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.car-card__price {
+  display: flex;
+  margin-top: 1.5rem;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.car-card__price-dollar,
+.car-card__price-day {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.car-card__image {
+  position: relative;
+  width: 100%;
+  height: 10rem;
+  margin-top: 1rem;
+  object-fit: contain;
+}
+
+// Footer styles
+.footer {
+  display: flex;
+  flex-direction: column;
+  color: #2b2c35;
+  margin-top: 1.25rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer__links-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 2.5rem 1.5rem;
+
+  @media (min-width: 640px) {
+    padding: 2.5rem 4rem;
+  }
+}
+
+.footer__copyrights {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  border-top: 1px solid #e5e7eb;
+  padding: 2.5rem 1.5rem;
+
+  @media (min-width: 640px) {
+    padding: 2.5rem 4rem;
+  }
+}
+
+// Searchbar styles
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 48rem;
+  position: relative;
+  gap: 1rem;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+}
+
+.searchbar__input {
+  width: 100%;
+  height: 3rem;
+  padding-left: 3rem;
+  padding: 1rem;
+  background-color: rgba(59, 60, 152, 0.03);
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+// Colors & Theme
+$primary-blue: #2b59ff;
+$secondary-orange: #f79761;
+$light-white: rgba(59, 60, 152, 0.03);
+$grey: #747a88;
+
+// Apply theme colors
+.text-black-100 {
+  color: #2b2c35;
+}
+
+.bg-primary-blue {
+  background-color: $primary-blue;
+}
+
+.bg-secondary-orange {
+  background-color: $secondary-orange;
+}
+
+.bg-light-white {
+  background-color: $light-white;
+}
+
+.text-grey {
+  color: $grey;
+}
