@@ -1,0 +1,22 @@
+@use "../../styles/variables/variables" as v;
+.customButton {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  transition: all 0.15s linear;
+  &:hover {
+    background-color: v.$hover-purple;
+    cursor: pointer;
+  }
+}
+
+.customStyle1 {
+  background-color: v.$primary-purple;
+  border-radius: 2rem;
+  color: v.$background-color;
+}
