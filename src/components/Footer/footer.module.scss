@@ -1,0 +1,65 @@
+@use "../../styles/variables/variables" as v;
+.footer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 5px;
+  border: 1px solid v.$accent-light-purple;
+  width: 100%;
+
+  .mainContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5px;
+    gap: 1.25rem;
+    padding: 2.5rem 3.5rem;
+    .logoHolder {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      p {
+        opacity: 0.5;
+        margin-left: 0.25rem;
+      }
+      img {
+        object-fit: contain;
+      }
+    }
+    .footerLinks {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 2rem;
+      max-width: 750px;
+      gap: 1rem;
+      .footerLink {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+    }
+
+    //add media query to make it flex column on medium screen devices
+  }
+  .footerCopyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+    padding: 1.5rem 3.5rem;
+    .copyrightLinks {
+      display: flex;
+      gap: 5rem;
+    }
+  }
+  //general Link component style
+  a {
+    text-decoration: none;
+    color: black;
+    opacity: 0.6;
+  }
+}
