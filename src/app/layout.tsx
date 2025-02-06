@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MotorShowcase",
+  title: "Motor Showcase",
   description: "A premier platform to explore and showcase the finest cars",
 };
 
