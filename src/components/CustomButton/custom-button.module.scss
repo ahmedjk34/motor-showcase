@@ -10,7 +10,6 @@
   border: none;
   transition: all 0.15s linear;
   &:hover {
-    background-color: v.$hover-purple;
     cursor: pointer;
   }
 }
@@ -19,4 +18,17 @@
   background-color: v.$primary-purple;
   border-radius: 2rem;
   color: v.$background-color;
+  &:hover {
+    background-color: v.$hover-purple;
+  }
+}
+
+.customStyle2 {
+  color: v.$primary-purple;
+  border-radius: 2rem;
+  background-color: v.$background-color;
+  min-width: 130px;
+  &:hover {
+    scale: 1.05;
+  }
 }

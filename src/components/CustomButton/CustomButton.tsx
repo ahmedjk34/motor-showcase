@@ -7,7 +7,7 @@ type Props = {
   disabled?: boolean;
   type?: "button" | "reset" | "submit" | undefined;
   customClassName: string;
-  action: () => void;
+  action?: () => void;
 };
 
 function CustomButton({
@@ -34,6 +34,8 @@ function styleFactory(enteredStyle: string): string {
   switch (enteredStyle) {
     case "style1":
       return styles.customStyle1;
+    case "style2":
+      return styles.customStyle2;
     default:
       return ""; //fallback
   }
