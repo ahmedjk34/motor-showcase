@@ -47,6 +47,12 @@
       flex-direction: row;
       position: relative;
       .heroInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        button {
+          width: fit-content;
+        }
       }
       .heroImageContainer {
         flex: 1.25;
