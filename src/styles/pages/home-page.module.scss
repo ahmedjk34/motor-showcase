@@ -11,10 +11,18 @@
     margin: 0 auto;
     padding: 0 2rem;
     min-height: 90dvh;
+    margin-top: 4rem;
     .heroInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 75vw;
       .heroTitle {
         font-size: 50px;
         font-weight: 800;
+      }
+      button {
+        width: fit-content;
       }
     }
 
@@ -46,13 +54,11 @@
     .hero {
       flex-direction: row;
       position: relative;
+      margin-top: 0;
       .heroInfo {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
-        button {
-          width: fit-content;
-        }
+        max-width: 25vw;
       }
       .heroImageContainer {
         flex: 1.25;
