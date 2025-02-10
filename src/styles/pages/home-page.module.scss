@@ -1,3 +1,4 @@
+@use "../variables/variables" as v;
 .homePage {
   overflow: hidden;
   .hero {
@@ -20,6 +21,7 @@
       .heroTitle {
         font-size: 50px;
         font-weight: 800;
+        color: v.$text-color;
       }
       button {
         width: fit-content;
@@ -49,7 +51,14 @@
       }
     }
   }
+  .catalog {
+    margin-top: 12px;
+    padding: 1.5rem;
+    width: 100%;
+  }
+}
 
+.homePage {
   @media (min-width: 1280px) {
     .hero {
       flex-direction: row;
@@ -88,6 +97,9 @@
   @media (min-width: 640px) {
     .heroTitle {
       font-size: 64px;
+    }
+    .catalog {
+      padding: 4rem;
     }
   }
 
