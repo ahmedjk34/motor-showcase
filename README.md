@@ -19,3 +19,4 @@
 - **API-Ninjas (Cars API)**: Provides car data for the site.
 - **React**: For building the UI components and managing state.
 - **TypeScript**: For static typing and better developer experience.
+
