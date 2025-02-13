@@ -55,6 +55,44 @@
     margin-top: 12px;
     padding: 1.5rem;
     width: 100%;
+    .titleHolder {
+      color: v.$text-color;
+      p {
+        opacity: 0.6;
+      }
+    }
+    .searchFilters {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+    .carsWrapper {
+      display: grid;
+      width: full;
+      gap: 2rem;
+      padding-top: 3.5rem;
+      grid-template-columns: 1fr;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (min-width: 1536px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .noCarsFoundSection {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 
