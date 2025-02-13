@@ -36,6 +36,8 @@ function styleFactory(enteredStyle: string): string {
       return styles.customStyle1;
     case "style2":
       return styles.customStyle2;
+    case "style3":
+      return styles.customStyle3;
     default:
       return ""; //fallback
   }
