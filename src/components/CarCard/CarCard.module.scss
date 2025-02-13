@@ -1,0 +1,99 @@
+@use "../../styles/variables/variables" as v;
+.carCard {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  color: v.$text-color;
+  background-color: #f5f8ff;
+  border-radius: 1.5rem;
+  transition: 0.3s;
+  height: 100%;
+  &:hover {
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    .carTitle {
+      font-size: 22px;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+  }
+
+  .rentalDetails {
+    display: flex;
+    margin-top: 6px;
+    font-size: 32px;
+    font-weight: bolder;
+    span {
+      font-size: 14px;
+      align-self: flex-end;
+    }
+    span:first-child {
+      align-self: flex-start;
+    }
+  }
+
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/10;
+    margin: 3px 0;
+    object-fit: contain;
+  }
+
+  .carInfoWrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-top: 2px;
+    &:hover {
+      .carInfo {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.25s ease-out; // Smooth fade-out
+      }
+      .buttonWrapper {
+        visibility: visible;
+        opacity: 1;
+        scale: 1.02;
+        transition: all 0.25s ease-in; // Smooth fade-in
+      }
+    }
+
+    .carInfo {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      color: v.$gray-text;
+      opacity: 1;
+      transition: opacity 0.25s ease-in;
+      .infoItem {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+      }
+    }
+
+    .buttonWrapper {
+      width: 100%;
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.25s ease-out;
+    }
+  }
+}
