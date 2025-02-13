@@ -7,6 +7,7 @@ type Props = {
   disabled?: boolean;
   type?: "button" | "reset" | "submit" | undefined;
   customClassName: string;
+  rightIcon: string | undefined;
   action?: () => void;
 };
 
@@ -15,6 +16,7 @@ function CustomButton({
   disabled,
   type,
   customClassName,
+  rightIcon,
   action,
 }: Props) {
   return (
@@ -24,7 +26,12 @@ function CustomButton({
       type={type}
       onClick={action}
     >
-      {title}
+      <span>{title}</span>
+      {rightIcon && (
+        <div className={styles.rightIconHolder}>
+          <Image src={rightIcon} alt="Icon" fill />
+        </div>
+      )}
     </button>
   );
 }

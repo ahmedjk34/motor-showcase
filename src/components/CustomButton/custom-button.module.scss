@@ -9,8 +9,19 @@
   outline: none;
   border: none;
   transition: all 0.15s linear;
+
   &:hover {
     cursor: pointer;
+  }
+
+  .rightIconHolder {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    img {
+      object-fit: contain;
+    }
   }
 }
 
