@@ -6,11 +6,13 @@ import { useState } from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import styles from "./CarCard.module.scss";
 import { calculateCarRent } from "@/Util";
+import CarDetails from "../CarDetails/CarDetails";
 type Props = {
   car: Car;
 };
 
 function CarCard({ car }: Props) {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const carRentalPrice = calculateCarRent(car.city_mpg, car.year);
   return (
     <div className={styles.carCard}>
@@ -54,9 +56,11 @@ function CarCard({ car }: Props) {
             title="View More"
             customClassName="style3"
             rightIcon="/right-arrow.svg"
+            action={() => setIsOpen(true)}
           />
         </div>
       </div>
+      <CarDetails isOpen={isOpen} setIsOpen={setIsOpen} car={car} />
     </div>
   );
 }
