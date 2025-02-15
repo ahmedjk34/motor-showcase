@@ -1,0 +1,62 @@
+.dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.modalWrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Show modal with animation */
+.show {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* Close button */
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Title */
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.description {
+  font-size: 16px;
+}
