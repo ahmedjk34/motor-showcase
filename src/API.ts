@@ -18,7 +18,7 @@ const options = {
 export async function getCars(): Promise<Car[] | null> {
   try {
     const url = "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars";
-    const params = { model: "corolla" };
+    const params = { model: "q3" };
     const response = await axios.get(url, { headers, params });
     const data = response.data;
     return data.length == 0 ? null : data; //if the data list is empty, return it as null
@@ -27,3 +27,15 @@ export async function getCars(): Promise<Car[] | null> {
     return null;
   }
 }
+export const getCarImageURL = (car: Car, angle?: string) => {
+  const url = new URL("https://cdn.imagin.studio/getimage");
+  const { make, model, year } = car;
+  url.searchParams.append("customer", "img");
+  url.searchParams.append("make", make);
+  url.searchParams.append("modelFamily", model.split(" ")[0]);
+  url.searchParams.append("zoomType", "fullscreen");
+  url.searchParams.append("modelYear", `${year}`);
+  url.searchParams.append("angle", `${angle}`);
+
+  return url.toString();
+};
