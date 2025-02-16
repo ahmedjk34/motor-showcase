@@ -16,7 +16,6 @@ function CarCard({ car }: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const carRentalPrice = calculateCarRent(car.city_mpg, car.year);
   const carURL = getCarImageURL(car);
-  console.log(carURL);
   return (
     <div className={styles.carCard}>
       <div className={styles.content}>
