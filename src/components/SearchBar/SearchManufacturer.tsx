@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
 import {
   Combobox,
   ComboboxButton,
@@ -10,12 +10,13 @@ import {
 import styles from "./search-bar.module.scss";
 import Image from "next/image";
 import { manufacturers } from "./data";
+
 type Props = {
   manufacturer: string;
-  setManufacturer: React.Dispatch<React.SetStateAction<string>>;
+  setManufacturer: (manufacturer: string) => void;
 };
 
-function SearchManufacturer({}: Props) {
+function SearchManufacturer({ manufacturer, setManufacturer }: Props) {
   const [query, setQuery] = useState<string>("");
   const filteredManufacturers =
     query === ""
@@ -26,9 +27,10 @@ function SearchManufacturer({}: Props) {
             .replace(/\s+/g, "")
             .includes(query.toLowerCase().replace(/\s+/g, ""))
         );
+
   return (
     <div className={styles.searchManufacturer}>
-      <Combobox>
+      <Combobox value={manufacturer} onChange={setManufacturer}>
         <div style={{ width: "100%", position: "relative" }}>
           <ComboboxButton className={styles.comboBoxButton}>
             <Image
