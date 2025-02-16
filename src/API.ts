@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Car } from "./Types";
+import { Car, SearchFilters } from "./Types";
 
 const headers = {
   "x-rapidapi-key": "c110a841aemsh730fe467f8b41c9p1fa73cjsn71210b6131cd", //HIDE THE KEY
@@ -15,10 +15,13 @@ const options = {
   },
 };
 
-export async function getCars(): Promise<Car[] | null> {
+export async function getCars(
+  searchFilters: SearchFilters
+): Promise<Car[] | null> {
   try {
+    const { model, fuel, manufacturer, year } = searchFilters;
     const url = "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars";
-    const params = { model: "q3" };
+    const params = { model, fuel_type: fuel, manufacturer, year };
     const response = await axios.get(url, { headers, params });
     const data = response.data;
     return data.length == 0 ? null : data; //if the data list is empty, return it as null
