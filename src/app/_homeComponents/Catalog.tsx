@@ -4,10 +4,16 @@ import SearchBar from "@/components/SearchBar/SearchBar";
 import CustomFilter from "@/components/CustomFilter/CustomFilter";
 import { getCars } from "@/API";
 import CarCard from "@/components/CarCard/CarCard";
-type Props = {};
 
-async function Catalog({}: Props) {
-  const allCars = await getCars();
+async function Catalog(searchParams: any) {
+  const passedParams = await searchParams;
+  const allCars = await getCars({
+    manufacturer: passedParams?.manufacturer ?? "",
+    year: passedParams?.year ?? 2022,
+    fuel: passedParams?.fuel ?? "",
+    model: passedParams?.model ?? "",
+  });
+
   return (
     <div className={styles.catalog}>
       <div className={styles.titleHolder}>
