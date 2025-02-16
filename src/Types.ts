@@ -12,3 +12,11 @@ export interface Car {
   transmission: string;
   year: number;
 }
+
+export interface SearchFilters {
+  manufacturer?: string;
+  year?: number;
+  limit?: number;
+  fuel?: string;
+  model?: string;
+}
