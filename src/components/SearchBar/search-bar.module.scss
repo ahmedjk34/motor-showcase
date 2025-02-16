@@ -1,5 +1,35 @@
 @use "../../styles/variables/variables" as v;
 .searchBar {
+  display: flex;
+  gap: 2rem;
+  .searchBarItem {
+    display: flex;
+  }
+  .seachButton {
+    margin-left: -3px;
+    z-index: 10;
+    &.desktop {
+      @media (max-width: 640px) {
+        display: none;
+      }
+    }
+    &.mobile {
+      @media (min-width: 640px) {
+        display: none;
+      }
+    }
+  }
+  .searchInput {
+    width: 100%;
+    height: 3rem;
+    padding-left: 3rem;
+    padding: 1rem;
+    background-color: rgba(59, 60, 152, 0.03);
+    border-radius: 9999px;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+  }
 }
 .searchManufacturer {
   .comboBoxButton {
@@ -22,5 +52,11 @@
       background-color: v.$accent-yellow;
     }
     background-color: v.$accent-light-purple;
+  }
+}
+
+@media (max-width: 640px) {
+  .searchBar {
+    flex-direction: column;
   }
 }
