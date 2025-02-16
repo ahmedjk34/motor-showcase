@@ -7,6 +7,7 @@ import CustomButton from "../CustomButton/CustomButton";
 import styles from "./CarCard.module.scss";
 import { calculateCarRent } from "@/Util";
 import CarDetails from "../CarDetails/CarDetails";
+import { getCarImageURL } from "@/API";
 type Props = {
   car: Car;
 };
@@ -14,6 +15,8 @@ type Props = {
 function CarCard({ car }: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const carRentalPrice = calculateCarRent(car.city_mpg, car.year);
+  const carURL = getCarImageURL(car);
+  console.log(carURL);
   return (
     <div className={styles.carCard}>
       <div className={styles.content}>
@@ -28,7 +31,7 @@ function CarCard({ car }: Props) {
       </p>
 
       <div className={styles.imageWrapper}>
-        <Image src="/hero.png" alt={car.make + " " + car.model} fill priority />
+        <Image src={carURL} alt={car.make + " " + car.model} fill priority />
       </div>
 
       <div className={styles.carInfoWrapper}>

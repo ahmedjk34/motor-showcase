@@ -4,6 +4,7 @@ import styles from "./car-details.module.scss";
 import { Car } from "@/Types";
 import Image from "next/image";
 import { Dialog, DialogPanel, Transition } from "@headlessui/react";
+import { getCarImageURL } from "@/API";
 
 type Props = {
   isOpen: boolean;
@@ -36,17 +37,37 @@ function CarDetails({ isOpen, setIsOpen, car }: Props) {
             </button>
             <div className={styles.header}>
               <div className={styles.mainImageWrapper}>
-                <Image src={"/hero.png"} alt="car model" fill priority />
+                <Image
+                  src={getCarImageURL(car, "")}
+                  alt="car model"
+                  fill
+                  priority
+                />
               </div>
               <div className={styles.imagesContainer}>
                 <div className={styles.imageWrapper}>
-                  <Image src={"/hero.png"} alt="car model" fill priority />
+                  <Image
+                    src={getCarImageURL(car, "29")}
+                    alt="car model"
+                    fill
+                    priority
+                  />
                 </div>
                 <div className={styles.imageWrapper}>
-                  <Image src={"/hero.png"} alt="car model" fill priority />
+                  <Image
+                    src={getCarImageURL(car, "33")}
+                    alt="car model"
+                    fill
+                    priority
+                  />
                 </div>
                 <div className={styles.imageWrapper}>
-                  <Image src={"/hero.png"} alt="car model" fill priority />
+                  <Image
+                    src={getCarImageURL(car, "13")}
+                    alt="car model"
+                    fill
+                    priority
+                  />
                 </div>
               </div>
             </div>
