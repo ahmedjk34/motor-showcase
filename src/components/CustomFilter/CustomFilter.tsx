@@ -26,10 +26,8 @@ function CustomFilter({ title }: Props) {
   const searchParams = useSearchParams();
 
   const handleUpdateParams = (e: { title: string; value: string }) => {
-    const newPathName = updateSearchParams(
-      e.title.toLowerCase(),
-      e.value.toLowerCase()
-    );
+    //We pass the title, since we want all the options for one filter type to be under the same search param
+    const newPathName = updateSearchParams(title, e.value.toLowerCase());
     router.push(newPathName, { scroll: false });
   };
 
