@@ -68,6 +68,10 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 1.25rem;
+      .filtersContainer {
+        display: flex;
+        gap: 1rem;
+      }
     }
     .carsWrapper {
       display: grid;
