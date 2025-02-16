@@ -78,8 +78,8 @@ function CarDetails({ isOpen, setIsOpen, car }: Props) {
                 </h2>
               </div>
               <div className={styles.information}>
-                {Object.entries(car).map(([key, value]) => (
-                  <div>
+                {Object.entries(car).map(([key, value], index) => (
+                  <div key={index + key}>
                     <h4>{key.split("_").join(" ")}</h4>
                     <p>{value}</p>
                   </div>
