@@ -25,10 +25,7 @@ function CarDetails({ isOpen, setIsOpen, car }: Props) {
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className={styles.dialog} onClose={setIsOpen}>
-        {/* Background Overlay */}
         <div className={`${styles.overlay} ${show ? styles.show : ""}`} />
-
-        {/* Modal Content */}
         <div className={`${styles.modalWrapper} ${show ? styles.show : ""}`}>
           <DialogPanel className={styles.modal}>
             <button
@@ -37,9 +34,37 @@ function CarDetails({ isOpen, setIsOpen, car }: Props) {
             >
               ✖
             </button>
-            <h2 className={styles.title}>{car.make}</h2>
-            <Image src={"/logo.png"} alt={car.make} width={500} height={300} />
-            <p className={styles.description}>{car.model}</p>
+            <div className={styles.header}>
+              <div className={styles.mainImageWrapper}>
+                <Image src={"/hero.png"} alt="car model" fill priority />
+              </div>
+              <div className={styles.imagesContainer}>
+                <div className={styles.imageWrapper}>
+                  <Image src={"/hero.png"} alt="car model" fill priority />
+                </div>
+                <div className={styles.imageWrapper}>
+                  <Image src={"/hero.png"} alt="car model" fill priority />
+                </div>
+                <div className={styles.imageWrapper}>
+                  <Image src={"/hero.png"} alt="car model" fill priority />
+                </div>
+              </div>
+            </div>
+            <div className={styles.content}>
+              <div>
+                <h2 className={styles.title}>
+                  {car.make} {car.model}
+                </h2>
+              </div>
+              <div className={styles.information}>
+                {Object.entries(car).map(([key, value]) => (
+                  <div>
+                    <h4>{key.split("_").join(" ")}</h4>
+                    <p>{value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </DialogPanel>
         </div>
       </Dialog>
