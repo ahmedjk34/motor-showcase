@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from "react";
+import React, { useState, Fragment } from "react";
 import {
   Combobox,
   ComboboxButton,
@@ -54,8 +54,8 @@ function SearchManufacturer({ manufacturer, setManufacturer }: Props) {
             leaveTo="opacity-0"
             afterLeave={() => setQuery("")}
           >
-            <ComboboxOptions>
-              {filteredManufacturers.map((item) => (
+            <ComboboxOptions className={styles.comboBoxOptionsContainer}>
+              {filteredManufacturers.slice(0, 12).map((item) => (
                 <ComboboxOption
                   key={item}
                   value={item}
