@@ -7,7 +7,7 @@ type Props = {
   disabled?: boolean;
   type?: "button" | "reset" | "submit" | undefined;
   customClassName: string;
-  rightIcon: string | undefined;
+  rightIcon?: string | undefined;
   action?: () => void;
 };
 
