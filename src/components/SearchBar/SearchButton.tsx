@@ -9,7 +9,7 @@ const SearchButton = ({ extraClasses }: Props) => {
   return (
     <button
       type="submit"
-      className={`${styles.seachButton} ${extraClasses ? extraClasses : ""}`}
+      className={`${styles.searchButton} ${extraClasses ? extraClasses : ""}`}
     >
       <Image
         src="/magnifying-glass.svg"
