@@ -2,7 +2,6 @@
 import React from "react";
 import styles from "../../styles/pages/home-page.module.scss";
 import CustomButton from "@/components/CustomButton/CustomButton";
-import Image from "next/image";
 
 type Props = {};
 

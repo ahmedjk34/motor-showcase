@@ -12,7 +12,6 @@
     margin: 0 auto;
     padding: 0 2rem;
     min-height: 90dvh;
-    margin-top: 4rem;
     .heroInfo {
       display: flex;
       flex-direction: column;
@@ -106,14 +105,15 @@
       flex-direction: row;
       position: relative;
       margin-top: 0;
+      padding-left: 3rem;
       .heroInfo {
         display: flex;
         flex-direction: column;
-        max-width: 25vw;
+        max-width: 30vw;
       }
       .heroImageContainer {
         flex: 1.25;
-        height: 90dvh;
+        height: 80dvh;
         position: relative;
         right: -5rem;
         .heroImg {
@@ -148,6 +148,12 @@
   @media (min-width: 1536px) {
     .heroTitle {
       font-size: 72px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .hero {
+      margin-top: 8rem;
     }
   }
 }
