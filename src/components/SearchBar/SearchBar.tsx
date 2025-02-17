@@ -35,10 +35,8 @@ function SearchBar({}: Props) {
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(manufacturer);
     if (manufacturer.trim().length == 0 && model.trim().length == 0) {
-      //Add a proper handling way later
-      return alert("Please enter data first");
+      return;
     }
     updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());
   };
@@ -52,7 +50,13 @@ function SearchBar({}: Props) {
         <SearchButton extraClasses={styles.mobile} />
       </div>
       <div className={styles.searchBarItem}>
-        <Image src="/model-icon.png" width={25} height={25} alt="Car Model" />
+        <Image
+          src="/model-icon.png"
+          width={25}
+          height={25}
+          alt="Car Model"
+          style={{ marginLeft: "0.25rem" }}
+        />
         <input
           type="text"
           name="model"
