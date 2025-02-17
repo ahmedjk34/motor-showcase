@@ -1,3 +1,5 @@
+@use "../../styles/variables/variables" as v;
+
 .customFilter {
   width: fit-content;
   .listBoxContainer {
@@ -7,11 +9,13 @@
       z-index: 10;
       display: flex;
       justify-content: space-between;
-      min-width: 120px;
+      min-width: 140px;
       border-radius: 0.5rem;
-      border: 1px solid black;
+      border: 1.25px solid black;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
       padding: 0.5rem 0.25rem;
+      background-color: rgba(59, 60, 152, 0.03);
+      font-size: 0.9rem;
     }
     .selected {
       display: block;
@@ -20,10 +24,18 @@
       text-overflow: ellipsis;
     }
     .customFiltersOptions {
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+      margin-top: 0.5rem;
+      border-radius: 0.5rem;
+      overflow: hidden;
       .option {
+        padding: 0.35rem 1rem;
         &.active {
-          background-color: red;
+          background-color: v.$accent-yellow;
         }
+        background-color: v.$accent-light-purple;
       }
       .selectedOption {
         font-weight: 900;
