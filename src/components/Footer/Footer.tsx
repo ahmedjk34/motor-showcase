@@ -10,7 +10,7 @@ function Footer({}: Props) {
     <footer className={styles.footer}>
       <div className={styles.mainContainer}>
         <div className={styles.logoHolder}>
-          <Image src="/logo.png" alt="logo" width={200} height={30} />
+          <Image src="/logo.png" alt="logo" width={200} height={45} />
           <p>
             Motor Showcase <br />
             All rights reserved &copy;
@@ -34,6 +34,9 @@ function Footer({}: Props) {
         <div className={styles.copyrightLinks}>
           <Link href="/">Privacy Policy</Link>
           <Link href="/"> Terms of Use</Link>
+          <Link href="https://www.linkedin.com/in/ahmedjk34/">
+            My Linkedin (Ahmed Gharib)
+          </Link>
         </div>
       </div>
     </footer>

@@ -43,8 +43,6 @@
         }
       }
     }
-
-    //add media query to make it flex column on medium screen devices
   }
   .footerCopyright {
     display: flex;
@@ -54,6 +52,7 @@
     margin-top: 1.5rem;
     border-top: 1px solid #e5e7eb;
     padding: 1.5rem 3.5rem;
+    gap: 1rem;
     .copyrightLinks {
       display: flex;
       gap: 5rem;
