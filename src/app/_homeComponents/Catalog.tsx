@@ -15,7 +15,7 @@ async function Catalog(searchParams: any) {
   });
 
   return (
-    <div className={styles.catalog}>
+    <div className={styles.catalog} id="catalog">
       <div className={styles.titleHolder}>
         <h1>Car Catalog</h1>
         <p>Explore the cars you might like</p>

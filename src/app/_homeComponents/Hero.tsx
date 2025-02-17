@@ -6,6 +6,13 @@ import CustomButton from "@/components/CustomButton/CustomButton";
 type Props = {};
 
 function Hero({}: Props) {
+  const handleScrollToCatalog = () => {
+    const catalogElement = document.getElementById("catalog");
+    if (catalogElement) {
+      catalogElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className={styles.hero}>
       <div className={styles.heroInfo}>
@@ -20,7 +27,7 @@ function Hero({}: Props) {
           title="Explore Cars"
           type="button"
           customClassName={"style1"}
-          action={() => {}}
+          action={handleScrollToCatalog}
         />
       </div>
       <div className={styles.heroImageContainer}>
