@@ -4,6 +4,8 @@ import carsData from "./carData";
 export function getCars(searchFilters: SearchFilters): Car[] | null {
   const { model, fuel, manufacturer, year } = searchFilters;
 
+  console.log(searchFilters);
+
   const filteredCars = carsData.filter((car) => {
     return (
       (!model || car.model.toLowerCase().includes(model.toLowerCase())) &&
@@ -13,7 +15,6 @@ export function getCars(searchFilters: SearchFilters): Car[] | null {
       (!year || car.year === year)
     );
   });
-  console.log(filteredCars);
 
   return filteredCars.length === 0 ? null : filteredCars;
 }

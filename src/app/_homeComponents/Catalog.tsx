@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../../styles/pages/home-page.module.scss";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import CustomFilter from "@/components/CustomFilter/CustomFilter";
 import { getCars } from "@/API";
 import CarCard from "@/components/CarCard/CarCard";
 
-async function Catalog(searchParams: any) {
-  const passedParams = await searchParams;
+async function Catalog({ searchParams }: any) {
   const allCars = await getCars({
-    manufacturer: passedParams?.manufacturer ?? "",
-    year: passedParams?.year ?? 0,
-    fuel: passedParams?.fuel ?? "",
-    model: passedParams?.model ?? "",
+    manufacturer: searchParams?.manufacturer ?? "",
+    year: searchParams?.year ?? 0,
+    fuel: searchParams?.fuel ?? "",
+    model: searchParams?.model ?? "",
   });
 
   return (
@@ -30,8 +29,8 @@ async function Catalog(searchParams: any) {
       <div>
         {allCars ? (
           <div className={styles.carsWrapper}>
-            {allCars.map((car) => (
-              <CarCard car={car} />
+            {allCars.map((car, index) => (
+              <CarCard car={car} key={car.make + index} />
             ))}
           </div>
         ) : (
