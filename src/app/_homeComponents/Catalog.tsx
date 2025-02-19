@@ -9,7 +9,7 @@ async function Catalog(searchParams: any) {
   const passedParams = await searchParams;
   const allCars = await getCars({
     manufacturer: passedParams?.manufacturer ?? "",
-    year: passedParams?.year ?? 2022,
+    year: passedParams?.year ?? 0,
     fuel: passedParams?.fuel ?? "",
     model: passedParams?.model ?? "",
   });

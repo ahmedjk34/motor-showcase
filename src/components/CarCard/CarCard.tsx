@@ -42,7 +42,7 @@ function CarCard({ car }: Props) {
               height={20}
               alt="steering-wheel"
             />
-            <p>{car.transmission === "a" ? "Automatic" : "Manual"}</p>
+            <p>{car.transmission}</p>
           </div>
           <div className={styles.infoItem}>
             <Image src={"/tire.svg"} width={20} height={20} alt="tire" />
