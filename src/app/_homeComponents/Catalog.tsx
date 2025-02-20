@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import { FiltersContainer } from "./FiltersContainer";
+import React from "react";
 import styles from "../../styles/pages/home-page.module.scss";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import CustomFilter from "@/components/CustomFilter/CustomFilter";
 import { getCars } from "@/API";
 import CarCard from "@/components/CarCard/CarCard";
+import CustomButton from "@/components/CustomButton/CustomButton";
 
 async function Catalog({ searchParams }: any) {
   const allCars = await getCars({
@@ -21,10 +23,7 @@ async function Catalog({ searchParams }: any) {
       </div>
       <div className={styles.searchFilters}>
         <SearchBar />
-        <div className={styles.filtersContainer}>
-          <CustomFilter title="fuel" />
-          <CustomFilter title="year" />
-        </div>
+        <FiltersContainer />
       </div>
       <div>
         {allCars ? (
