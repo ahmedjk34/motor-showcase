@@ -68,6 +68,11 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 1.25rem;
+      width: 100%;
+      @media (max-width: 640px) {
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
       .filtersContainer {
         display: flex;
         gap: 1rem;
