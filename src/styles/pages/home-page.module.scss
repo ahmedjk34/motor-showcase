@@ -10,7 +10,6 @@
     margin: 0 auto;
     padding: 0 2rem;
     min-height: 90dvh;
-    margin-top: 4rem;
     overflow-x: hidden;
     .heroInfo {
       display: flex;
@@ -154,12 +153,6 @@
   @media (min-width: 1536px) {
     .heroTitle {
       font-size: 72px;
-    }
-  }
-
-  @media (max-width: 400px) {
-    .hero {
-      margin-top: 8rem;
     }
   }
 }

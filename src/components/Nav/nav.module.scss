@@ -1,7 +1,7 @@
 @use "../../styles/variables/variables" as v;
 
 .nav {
-  position: absolute;
+  position: relative;
   z-index: 10;
   display: flex;
   justify-content: space-between;
@@ -29,7 +29,6 @@
     flex-direction: column;
     align-items: center;
     padding: 0.5rem;
-
     gap: 1rem;
   }
 }
