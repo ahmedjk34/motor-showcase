@@ -1,6 +1,9 @@
 import { Car, SearchFilters } from "./Types";
 import carsData from "./carData";
 
+// Filters the list of cars based on the provided search filters.
+// @param searchFilters - An object containing the search criteria.
+// @returns An array of cars that match the search criteria or null if no cars match.
 export function getCars(searchFilters: SearchFilters): Car[] | null {
   const { model, fuel, manufacturer, year } = searchFilters;
 
@@ -17,6 +20,10 @@ export function getCars(searchFilters: SearchFilters): Car[] | null {
   return filteredCars.length === 0 ? null : filteredCars;
 }
 
+// Generates a URL for fetching the image of a car.
+// @param car - The car object for which the image URL is to be generated.
+// @param angle - Optional parameter to specify the angle of the car image.
+// @returns A string representing the URL to fetch the car image.
 export const getCarImageURL = (car: Car, angle?: string) => {
   const url = new URL("https://cdn.imagin.studio/getimage");
   const { make, model, year } = car;

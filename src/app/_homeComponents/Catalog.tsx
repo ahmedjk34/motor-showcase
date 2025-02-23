@@ -2,7 +2,6 @@ import { FiltersContainer } from "./FiltersContainer";
 import React from "react";
 import styles from "../../styles/pages/home-page.module.scss";
 import SearchBar from "@/components/SearchBar/SearchBar";
-import CustomFilter from "@/components/CustomFilter/CustomFilter";
 import { getCars } from "@/API";
 import CarCard from "@/components/CarCard/CarCard";
 import CustomButton from "@/components/CustomButton/CustomButton";
