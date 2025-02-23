@@ -32,6 +32,7 @@
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   position: relative;
   padding: 2rem;
+  max-height: 95dvh;
 }
 
 /* Show modal with animation */
@@ -126,5 +127,13 @@
 @media (max-width: 400px) {
   .modalWrapper {
     margin: 0 1.25rem;
+  }
+}
+
+@media (max-height: 1200px) {
+  .header {
+    .mainImageWrapper {
+      display: none;
+    }
   }
 }

@@ -1,4 +1,3 @@
-"use client";
 import React, { Fragment, useState, useEffect } from "react";
 import styles from "./car-details.module.scss";
 import { Car } from "@/Types";
@@ -14,6 +13,8 @@ type Props = {
 
 function CarDetails({ isOpen, setIsOpen, car }: Props) {
   const [show, setShow] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -38,45 +39,41 @@ function CarDetails({ isOpen, setIsOpen, car }: Props) {
             <div className={styles.header}>
               <div className={styles.mainImageWrapper}>
                 <Image
-                  src={getCarImageURL(car, "")}
+                  src={error ? "/placeholder.jpg" : getCarImageURL(car, "")}
                   alt="car model"
                   fill
                   priority
+                  onLoadingComplete={() => setImageLoaded(true)}
+                  onError={() => setError(true)}
+                  className={!imageLoaded ? styles.loading : ""}
                 />
+                {!imageLoaded && (
+                  <div className={styles.placeholder}>Loading...</div>
+                )}
               </div>
               <div className={styles.imagesContainer}>
-                <div className={styles.imageWrapper}>
-                  <Image
-                    src={getCarImageURL(car, "29")}
-                    alt="car model"
-                    fill
-                    priority
-                  />
-                </div>
-                <div className={styles.imageWrapper}>
-                  <Image
-                    src={getCarImageURL(car, "33")}
-                    alt="car model"
-                    fill
-                    priority
-                  />
-                </div>
-                <div className={styles.imageWrapper}>
-                  <Image
-                    src={getCarImageURL(car, "13")}
-                    alt="car model"
-                    fill
-                    priority
-                  />
-                </div>
+                {["29", "33", "13"].map((id) => (
+                  <div key={id} className={styles.imageWrapper}>
+                    <Image
+                      src={error ? "/placeholder.jpg" : getCarImageURL(car, id)}
+                      alt="car model"
+                      fill
+                      priority
+                      onLoadingComplete={() => setImageLoaded(true)}
+                      onError={() => setError(true)}
+                      className={!imageLoaded ? styles.loading : ""}
+                    />
+                    {!imageLoaded && (
+                      <div className={styles.placeholder}>Loading...</div>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
             <div className={styles.content}>
-              <div>
-                <h2 className={styles.title}>
-                  {car.make} {car.model}
-                </h2>
-              </div>
+              <h2 className={styles.title}>
+                {car.make} {car.model}
+              </h2>
               <div className={styles.information}>
                 {Object.entries(car).map(([key, value], index) => (
                   <div key={index + key}>

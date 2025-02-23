@@ -158,4 +158,11 @@
       font-size: 72px;
     }
   }
+
+  @media (max-width: 1000px) {
+    .hero {
+      overflow: hidden;
+      width: 100%;
+    }
+  }
 }

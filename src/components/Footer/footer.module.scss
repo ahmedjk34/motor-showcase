@@ -55,7 +55,8 @@
     gap: 1rem;
     .copyrightLinks {
       display: flex;
-      gap: 5rem;
+      gap: 5vw;
+      flex-wrap: wrap;
     }
   }
   //general Link component style
