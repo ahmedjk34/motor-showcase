@@ -17,7 +17,6 @@ function SearchBar({}: Props) {
 
   const updateSearchParams = (model: string, manufacturer: string) => {
     const params = new URLSearchParams(searchParams.toString());
-
     if (model) {
       params.set("model", model);
     } else {
@@ -35,10 +34,10 @@ function SearchBar({}: Props) {
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (manufacturer.trim().length == 0 && model.trim().length == 0) {
+    if (manufacturer?.trim().length == 0 && model?.trim().length == 0) {
       return;
     }
-    updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());
+    updateSearchParams(model?.toLowerCase(), manufacturer?.toLowerCase());
   };
   return (
     <form className={styles.searchBar} onSubmit={handleSearch}>
