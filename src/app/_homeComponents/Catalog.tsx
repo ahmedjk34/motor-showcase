@@ -4,7 +4,6 @@ import styles from "../../styles/pages/home-page.module.scss";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import { getCars } from "@/API";
 import CarCard from "@/components/CarCard/CarCard";
-import CustomButton from "@/components/CustomButton/CustomButton";
 
 async function Catalog({ searchParams }: any) {
   const allCars = await getCars({

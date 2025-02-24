@@ -6,8 +6,6 @@ import carsData from "./carData";
 // @returns An array of cars that match the search criteria or null if no cars match.
 export function getCars(searchFilters: SearchFilters): Car[] | null {
   const { model, fuel, manufacturer, year } = searchFilters;
-  console.log(year, "api");
-
   const filteredCars = carsData.filter((car) => {
     return (
       (!model || car.model.toLowerCase().includes(model.toLowerCase())) &&
@@ -17,7 +15,6 @@ export function getCars(searchFilters: SearchFilters): Car[] | null {
       (!year || car.year === Number(year))
     );
   });
-  console.log(filteredCars, "api");
   return filteredCars.length === 0 ? null : filteredCars;
 }
 
