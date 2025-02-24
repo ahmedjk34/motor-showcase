@@ -1,6 +1,6 @@
 # MotorShowcase
 
-**MotorShowcase** is a car showcase website built using **Next.js 15** with **SASS (SCSS)**. The platform integrates data from the **Cars API by API-Ninjas** to provide users with an elegant and responsive interface to explore and showcase a wide variety of cars. The site features advanced filtering, custom search, and user-friendly modal and combobox elements for a seamless and interactive user experience.
+**MotorShowcase** is a car showcase website built using **Next.js 15** with **SASS (SCSS)**. The platform integrates data from generated using artifical intellegence & an external API to provide users with an elegant and responsive interface to explore and showcase a wide variety of cars. The site features advanced filtering, custom search, and user-friendly modal and combobox elements for a seamless and interactive user experience.
 
 ## Features
 
@@ -16,6 +16,6 @@
 
 - **Next.js 15**: React-based framework for building the application.
 - **SASS/SCSS**: For styling the app with a modular approach.
-- **API-Ninjas (Cars API)**: Provides car data for the site.
+- **imagin-studio Image API**: Provides car images for the site.
 - **React**: For building the UI components and managing state.
 - **TypeScript**: For static typing and better developer experience.
